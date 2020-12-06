@@ -15,7 +15,7 @@ Pollutant<- read.csv('C:/.csv', sep=';') #It opens your file, in the example a .
 #01-01-2020 CO   0.5 0.6   0.4 ...  0.2
 #01-01-2020 NO2 7    6     7   ...    2
 
-#with this step i solved to indexed values for date and hour like this:
+#with this step I solved to indexed values for date and hour like this:
 #date        hour Pollutant_value  pollutant
 #01-01-2020  hour1      0.5          CO
 #01-01-2020  hour2      0.6          CO
@@ -23,14 +23,14 @@ Pollutant<- read.csv('C:/.csv', sep=';') #It opens your file, in the example a .
 #....
 #01-01-2020  24      3          NO2
 
-tpol<- pivot_longer(Pollutant, cols=13:36, names_to = "hur", values_to = "POLUTANT_VALUE") #
+tpol<- pivot_longer(Pollutant, cols=13:36, names_to = "hour", values_to = "POLUTANT_VALUE") # In the example above not all the columns  are represented
 
 
 #Then I wanted to have one column per pollutant, I transposed using rephase2 
 
 
 require(reshape2)
-df_transpose<-dcast(tpol, CODI_EOI + dateA + hour + MUNICIPI+ NOM_ESTACIO + LATITUD + LONGITUD + ALTITUD ~ POLLUTANT, value.var="Pollutant_value")
+df_transpose<-dcast(tpol,  date + hour + MUNICIPI+ NOM_ESTACIO + LATITUD + LONGITUD + ALTITUD ~ POLLUTANT, value.var="Pollutant_value")
 
 # some fixing data to my df were
 
