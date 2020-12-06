@@ -23,7 +23,7 @@ Pollutant<- read.csv('C:/.csv', sep=';') #It opens your file, in the example a .
 #....
 #01-01-2020  24      3          NO2
 
-tpol<<- pivot_longer(Pollutant, cols=13:36, names_to = "hur", values_to = "POLUTANT_VALUE") #
+tpol<- pivot_longer(Pollutant, cols=13:36, names_to = "hur", values_to = "POLUTANT_VALUE") #
 
 
 #Then I wanted to have one column per pollutant, I transposed using rephase2 
