@@ -5,7 +5,7 @@ par(mfrow=c(1,1))
 library(ggplot2)
 library(tidyr)
 
-Pollutant<- read.csv('C:/.csv', sep=';') #opens your file, in the example a .csv
+Pollutant<- read.csv('C:/.csv', sep=';') #It opens your file, in the example a .csv
 
 
 
