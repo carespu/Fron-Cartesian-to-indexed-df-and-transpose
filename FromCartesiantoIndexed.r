@@ -30,11 +30,11 @@ tpol<- pivot_longer(Pollutant, cols=13:36, names_to = "hour", values_to = "POLUT
 
 
 require(reshape2)
-df_transpose<-dcast(tpol,  date + hour + MUNICIPI+ NOM_ESTACIO + LATITUD + LONGITUD + ALTITUD ~ POLLUTANT, value.var="Pollutant_value")
+df_transpose<-dcast(tpol,  date + hour + Station + LAT + LON+ ALT ~ POLLUTANT, value.var="Pollutant_value")
 
 # some fixing data to my df were
 
-#cleaning hour colum to make it numerical:
+#cleaning hour column to make it numerical:
 
 df_transpose$hour <- stringr::str_replace(df_transpose$hour, 'hour', '')
 
